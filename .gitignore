@@ -86,6 +86,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 Assets/TerrainDemoScene_URP
+Assets/Invector-3rdPersonController_LITE
 Assets/TerrainSampleAssets
 Assets/StreamingAssets
 Assets/Temp.meta

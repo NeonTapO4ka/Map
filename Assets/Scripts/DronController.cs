@@ -11,6 +11,7 @@ public class DroneController : MonoBehaviour
     public float gravity = 20.0f;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
+    public LayerMask waterLayer;
     private Vector3 _moveDirection = Vector3.zero;
     private float _rotationX = 0;
     public bool canMove = true;
@@ -49,6 +50,7 @@ public class DroneController : MonoBehaviour
         {
             _moveDirection.y -= gravity * Time.deltaTime;
         }
+        
 
         _characterController.Move(_moveDirection * Time.deltaTime);
 

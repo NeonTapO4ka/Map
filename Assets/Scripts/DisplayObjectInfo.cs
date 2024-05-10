@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using TMPro;
+
 
 public class DisplayObjectInfo : MonoBehaviour
 {
     [SerializeField] private int size = 90;
     private float _posX;
     private float _posY;
-    private string _textInfo;
+    public TMP_Text _textInfo;
+    
+     
     
     public Camera droneCamera; 
     private Ray ray; 
@@ -24,7 +28,7 @@ public class DisplayObjectInfo : MonoBehaviour
         }
         else
         {
-            _textInfo = ""; 
+            _textInfo.text = ""; 
         }
     }
 
@@ -43,22 +47,22 @@ public class DisplayObjectInfo : MonoBehaviour
         }
         if (File.Exists(filePath))
         {
-            _textInfo = File.ReadAllText(filePath);
-            Debug.Log(_textInfo);
+            _textInfo.text = File.ReadAllText(filePath);
+            Debug.Log(_textInfo.text);
         }
         else
         {
-            _textInfo = "";
+            _textInfo.text = "";
         }
 
     }
     
-    public void OnGUI(){   
+    /*public void OnGUI(){   
         
         _posX = Screen.width/2.0f - size/16.0f;
         _posY = Screen.height/2.0f+200 - size/8.0f;
         GUI.color=Color.black;
         GUI.Label (new Rect (_posX, _posY, size, size), _textInfo);
-    }
+    }*/
 }
 
